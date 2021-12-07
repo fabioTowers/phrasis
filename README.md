@@ -14,6 +14,8 @@ O sistema foi desenvolvido utilizando o *framework* **[Laravel](https://laravel.
 
 Para estilizar a interface e criar *components* utilizou-se o **[Vue Js](https://vuejs.org/ 'Saiba mais')**.
 
+Os dados são persistidos no banco de dados usando o SGBD MySQL.
+
 ---
 ### Instruções de *Deploy*
 
@@ -25,6 +27,7 @@ Para estilizar a interface e criar *components* utilizou-se o **[Vue Js](https:/
 
 #### Executar a aplicação:
 1. Navegar até o diretório do projeto via prompt de comando;
+2. Digitar e executar o comando `php artisan migrate` (apenas na primeira execução, cria as tabelas usadas na aplicação);
 2. Digitar e executar o comando `php artisan serve`;
 3. Acessar pelo navegador o endereço `http://127.0.0.1:8000`.
 
