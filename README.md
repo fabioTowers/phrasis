@@ -24,12 +24,14 @@ Os dados são persistidos no banco de dados usando o SGBD MySQL.
 * Ter o [PHP](http://php.net/manual/en/install.php 'Saiba mais') instalado;
 * Possuir o [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ 'Saiba mais') instalado;
 * Ter o *schema* [phrasis_db](https://github.com/fabioTowers/phrasis/blob/main/phrasis_db.sql 'Script de criação').
+* Criar um arquivo .env na pasta da aplicação, seguindo o exemplo de preenchimento do [arquivo de exemplo](https://github.com/fabioTowers/phrasis/blob/main/.env.example) 
 
 #### Executar a aplicação:
 1. Navegar até o diretório do projeto via prompt de comando;
-2. Digitar e executar o comando `php artisan migrate` (apenas na primeira execução, cria as tabelas usadas na aplicação);
-2. Digitar e executar o comando `php artisan serve`;
-3. Acessar pelo navegador o endereço `http://127.0.0.1:8000`.
+2. Digitar e executar o comando `composer install --no-scripts` (apenas na primeira execução, para baixar as dependências do projeto);
+3. Digitar e executar o comando `php artisan migrate` (apenas na primeira execução, cria as tabelas usadas na aplicação);
+4. Digitar e executar o comando `php artisan serve`;
+5. Acessar pelo navegador o endereço `http://127.0.0.1:8000`.
 
 ---
 ### Desenvolvedores
