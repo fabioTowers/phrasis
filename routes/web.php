@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Qualquer rota da web será "lidada" com o vue-router,
+ * e portanto todas apontam para o arquivo welcome que é onde
+ * está declarado o id #app que é referenciado pelo Vue
+ */
+Route::get('/{any?}', [
+    function () {
+        return view('welcome');
+    }
+])->where('any', '.*');
