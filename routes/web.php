@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhrasesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/**
- * Qualquer rota da web será "lidada" com o vue-router,
- * e portanto todas apontam para o arquivo welcome que é onde
- * está declarado o id #app que é referenciado pelo Vue
- */
-Route::get('/{any?}', [
-    function () {
-        return view('welcome');
-    }
-])->where('any', '.*');
+Route::get('/', [PhrasesController::class, 'index']);
+
+Route::view('/edit', 'addModifyPhrase');
+
+Route::get('/create', [PhrasesController::class, 'create']);
+
+Route::post('/store', [PhrasesController::class, 'store']);

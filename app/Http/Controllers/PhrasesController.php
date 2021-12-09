@@ -4,18 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Phrase;
+
 class PhrasesController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $phrases = Phrase::all();
         return view('index', ['phrases' => $phrases]);
     }
 
-    public function edit( Phrase $phrase ) {
+    public function edit(Phrase $phrase)
+    {
         return view('phrases.edit', ['phrase' => $phrase]);
     }
 
-    public function update( Phrase $phrase ) {
+    public function update(Phrase $phrase)
+    {
         request()->validate([
             'content' => 'required',
             'author' => 'required',
@@ -27,11 +32,13 @@ class PhrasesController extends Controller
         return redirect('/phrases');
     }
 
-    public function create() {
+    public function create()
+    {
         return view('phrases.create');
     }
 
-    public function store() {
+    public function store()
+    {
         request()->validate([
             'content' => 'required',
             'author' => 'required',
@@ -43,7 +50,8 @@ class PhrasesController extends Controller
         return redirect('/phrases');
     }
 
-    public function destroy(Phrase $phrase) {
+    public function destroy(Phrase $phrase)
+    {
         $phrase->delete();
         return redirect('/phrases');
     }

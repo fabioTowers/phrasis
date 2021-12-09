@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,10 +23,11 @@ window.Vue = require('vue').default;
 /**
  * Importando o componente principal o App.vue e o router da aplicação
  */
-Vue.component('App', require('./components/App.vue').default);
-import router from './routes/routes';
-window.router = router;
-window.Fire = new Vue();
+Vue.component('PhrasesList', require('./components/PhrasesList.vue').default);
+Vue.component('HeaderComponent', require('./components/Header').default);
+Vue.component('PhraseForm', require('./components/PhraseForm').default);
+
+Vue.use(require('bootstrap-vue'))
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,5 +37,4 @@ window.Fire = new Vue();
 
 const app = new Vue({
     el: '#app',
-    router
 });
