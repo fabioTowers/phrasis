@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Phrasis</title>
+    <title>Editar citação | Phrasis</title>
 
     <!-- Fonts -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
@@ -15,7 +15,8 @@
     <div id="app">
         <header-component></header-component>
         <div class="container-lg mt-5">
-            <phrases-list :phrases='{!! json_encode($phrases) !!}'></phrases-list>
+            <!-- {{$phrase}} -->
+            <phrase-form :phrase='{!! json_encode($phrase) !!}'></phrase-form>
         </div>
     </div>
     <script src="{{ mix('/js/app.js') }}"></script>

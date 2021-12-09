@@ -1,7 +1,9 @@
 <template>
     <div>
         <a href="/"> <span>Voltar</span></a>
-        <h1 class="mt-1">Nova frase</h1>
+        <h1 class="mt-1">
+            {{ pageAction === "add" ? "Nova" : "Editar" }} frase
+        </h1>
         <b-form @submit="onSubmit" class="mt-5">
             <b-form-group
                 id="input-group-1"
@@ -30,9 +32,9 @@
                 ></b-form-input>
             </b-form-group>
 
-            <b-button class="w-100" type="submit" variant="primary"
-                >Adicionar!</b-button
-            >
+            <b-button class="w-100" type="submit" variant="primary">
+                {{ pageAction === "add" ? "Adicionar" : "Editar" }}
+            </b-button>
         </b-form>
     </div>
 </template>
@@ -40,20 +42,48 @@
 <script>
 export default {
     name: "PhraseForm",
+    props: ["phrase"],
     data() {
         return {
+            pageAction: "add",
             form: {
                 content: "",
                 author: "",
             },
         };
     },
+    watch: {
+        phrase: {
+            handler(val) {
+                if (val) {
+                    this.pageAction = "edit";
+                    this.form = {
+                        content: this.phrase.content,
+                        author: this.phrase.author,
+                    };
+                }
+            },
+            immediate: true,
+        },
+    },
     methods: {
-        async onSubmit() {
+        async onSubmit(e) {
+            e.preventDefault();
             try {
-                await axios.post("/store", this.form);
+                if (this.pageAction === "add") {
+                    await axios.post("/store", this.form);
+                } else {
+                    await axios.put(`/update/${this.phrase.id}`, this.form);
+                }
+
+                window.location.href = "/";
             } catch (error) {
-                console.log(error);
+                this.$bvToast.toast("Um erro inesperado ocorreu", {
+                    title: "Ops...",
+                    variant: "danger",
+                    solid: true,
+                    toaster: "b-toaster-top-center",
+                });
             }
         },
     },

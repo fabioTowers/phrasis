@@ -7,14 +7,22 @@
             >
         </div>
         <div class="mt-3" v-if="phrases.length > 0">
-            <b-card v-for="phrase in phrases" :key="phrase.id">
-                <b-card-text>
-                    {{ phrase.content }}
-                </b-card-text>
+            <b-card v-for="phrase in phrases" :key="phrase.id" class="mb-3">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ phrase.content }}</p>
+                    <footer class="blockquote-footer">
+                        {{ phrase.author }}
+                    </footer>
+                </blockquote>
 
-                <b-card-text class="text-muted">
-                    {{ phrase.author }}
-                </b-card-text>
+                <div class="mt-3">
+                    <b-button
+                        @click="() => goToEditPage(phrase.id)"
+                        variant="link"
+                        >Editar</b-button
+                    >
+                    <b-button variant="link">Remover</b-button>
+                </div>
 
                 <template #footer>
                     <small class="text-muted"
@@ -51,9 +59,13 @@ export default {
     },
     methods: {
         goToNewPhrasePage() {
-            console.log(window.location);
             const currentLocation = window.location.href;
             window.location.href = currentLocation + "create";
+        },
+
+        goToEditPage(id) {
+            const currentLocation = window.location.href;
+            window.location.href = currentLocation + `edit/${id}`;
         },
     },
     filters: {

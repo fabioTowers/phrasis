@@ -14,13 +14,16 @@ class PhrasesController extends Controller
         return view('index', ['phrases' => $phrases]);
     }
 
-    public function edit(Phrase $phrase)
+    public function edit($id)
     {
+        $phrase = Phrase::find($id);
         return view('phrases.edit', ['phrase' => $phrase]);
     }
 
-    public function update(Phrase $phrase)
+    public function update($id)
     {
+        $phrase = Phrase::find($id);
+
         request()->validate([
             'content' => 'required',
             'author' => 'required',

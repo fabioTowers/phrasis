@@ -1,5 +1,5 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 
 // Variables
 @import "variables";
@@ -8,3 +8,13 @@
 @import "~bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap-vue/src/index.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Merriwheater", serif;
+    font-weight: bold;
+}

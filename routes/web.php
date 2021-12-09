@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PhrasesController::class, 'index']);
 
-Route::view('/edit', 'addModifyPhrase');
-
 Route::get('/create', [PhrasesController::class, 'create']);
 
+Route::get('/edit/{id}', [PhrasesController::class, 'edit']);
+
 Route::post('/store', [PhrasesController::class, 'store']);
+
+Route::post('/update/{id}', [PhrasesController::class, 'update']);
