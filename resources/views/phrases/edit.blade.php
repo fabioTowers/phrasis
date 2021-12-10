@@ -15,7 +15,6 @@
     <div id="app">
         <header-component></header-component>
         <div class="container-lg mt-5">
-            <!-- {{$phrase}} -->
             <phrase-form :phrase='{!! json_encode($phrase) !!}'></phrase-form>
         </div>
     </div>

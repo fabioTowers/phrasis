@@ -21,7 +21,17 @@
                         variant="link"
                         >Editar</b-button
                     >
-                    <b-button variant="link">Remover</b-button>
+                    <b-button
+                        @click="
+                            () => {
+                                phraseToBeRemoved = phrase;
+                                isModalOpen = true;
+                            }
+                        "
+                        variant="link"
+                        class="text-danger"
+                        >Remover</b-button
+                    >
                 </div>
 
                 <template #footer>
@@ -41,6 +51,23 @@
                 Nova frase</b-button
             >
         </div>
+        <b-modal v-model="isModalOpen" hide-footer title="Atenção">
+            <div class="d-block text-center">
+                <h3>Remover frase</h3>
+                <p>Você tem certeza que deseja remover esta frase?</p>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <b-button
+                    variant="link"
+                    class="text-muted"
+                    @click="isModalOpen = false"
+                    >Cancelar</b-button
+                >
+                <b-button variant="outline-danger ml-2" @click="removePhrase"
+                    >Sim, remover</b-button
+                >
+            </div>
+        </b-modal>
     </div>
 </template>
 <script>
@@ -55,6 +82,7 @@ export default {
     data() {
         return {
             isModalOpen: false,
+            phraseToBeRemoved: null,
         };
     },
     methods: {
@@ -66,6 +94,20 @@ export default {
         goToEditPage(id) {
             const currentLocation = window.location.href;
             window.location.href = currentLocation + `edit/${id}`;
+        },
+        async removePhrase() {
+            try {
+                await axios.delete(`/delete/${this.phraseToBeRemoved.id}`);
+                this.isModalOpen = false;
+                window.location.href = "/";
+            } catch (error) {
+                this.$bvToast.toast("Um erro inesperado ocorreu", {
+                    title: "Ops...",
+                    variant: "danger",
+                    solid: true,
+                    toaster: "b-toaster-top-center",
+                });
+            }
         },
     },
     filters: {

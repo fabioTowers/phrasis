@@ -78,6 +78,7 @@ export default {
 
                 window.location.href = "/";
             } catch (error) {
+                console.log(error);
                 this.$bvToast.toast("Um erro inesperado ocorreu", {
                     title: "Ops...",
                     variant: "danger",

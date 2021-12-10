@@ -32,7 +32,6 @@ class PhrasesController extends Controller
             'content' => request('content'),
             'author' => request('author'),
         ]);
-        return redirect('/phrases');
     }
 
     public function create()
@@ -50,12 +49,12 @@ class PhrasesController extends Controller
             'content' => request('content'),
             'author' => request('author'),
         ]);
-        return redirect('/phrases');
+        return redirect('/');
     }
 
-    public function destroy(Phrase $phrase)
+    public function destroy($id)
     {
+        $phrase = Phrase::find($id);
         $phrase->delete();
-        return redirect('/phrases');
     }
 }

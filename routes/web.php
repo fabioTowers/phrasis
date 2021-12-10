@@ -22,4 +22,6 @@ Route::get('/edit/{id}', [PhrasesController::class, 'edit']);
 
 Route::post('/store', [PhrasesController::class, 'store']);
 
-Route::post('/update/{id}', [PhrasesController::class, 'update']);
+Route::put('/update/{id}', [PhrasesController::class, 'update']);
+
+Route::delete('/delete/{id}', [PhrasesController::class, 'destroy']);

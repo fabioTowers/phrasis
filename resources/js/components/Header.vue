@@ -3,8 +3,8 @@
         <b-navbar toggleable="sm" type="dark" variant="light" class="navbar">
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
 
-            <b-navbar-brand href="/" class="font-weight-bold mx-auto">
-                <h3 class="mt-3">Phrasis</h3>
+            <b-navbar-brand href="/" class="mx-auto text-center">
+                <h3 class="mt-3 font-weight-bold">Phrasis</h3>
             </b-navbar-brand>
         </b-navbar>
     </div>
