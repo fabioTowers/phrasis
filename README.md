@@ -16,6 +16,28 @@ Para estilizar a interface e criar *components* utilizou-se o **[Vue Js](https:/
 
 Os dados são persistidos no banco de dados usando o SGBD MySQL.
 
+#### Interface
+
+Tela inicial (sem frases cadastradas):
+
+![Print da tela inicial](img/tela_inicial.png "Início")
+
+Página de inserção de nova frase:
+
+![Print da tela de nova frase](img/adicionar_frase.png "Adicionar")
+
+Listagem de frases salvas:
+
+![Print da tela de listagem de frases](img/lista_frases.png "Lista")
+
+Página de edição de frase:
+
+![Print da tela de edição de uma frase](img/edicao_frase.png "Edição")
+
+Aviso de exclusão de uma frase:
+
+![Print do aviso de exclusão de uma frase](img/deletar_frase.png "Excluir")
+
 ---
 ### Instruções de *Deploy*
 
@@ -23,8 +45,8 @@ Os dados são persistidos no banco de dados usando o SGBD MySQL.
 * Possuir o [Composer](https://getcomposer.org/ 'Saiba mais') instalado;
 * Ter o [PHP](http://php.net/manual/en/install.php 'Saiba mais') instalado;
 * Possuir o [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ 'Saiba mais') instalado;
-* Ter o *schema* [phrasis_db](https://github.com/fabioTowers/phrasis/blob/main/phrasis_db.sql 'Script de criação').
-* Criar um arquivo .env na pasta da aplicação, seguindo o exemplo de preenchimento do [arquivo de exemplo](https://github.com/fabioTowers/phrasis/blob/main/.env.example) 
+* Ter o *schema* [phrasis_db](https://github.com/fabioTowers/phrasis/blob/main/phrasis_db.sql 'Script de criação');
+* Criar um arquivo .env na pasta da aplicação, seguindo o exemplo de preenchimento do [arquivo de exemplo](https://github.com/fabioTowers/phrasis/blob/main/.env.example).
 
 #### Executar a aplicação:
 1. Navegar até o diretório do projeto via prompt de comando;
