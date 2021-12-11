@@ -65,3 +65,6 @@ Criado por:
 > *[Carolina de Moraes (SP3030571)](https://github.com/CarolinaMoraes 'Ver perfil no GitHub')*
 
 > *[Fabio Mendes (SP3023184)](https://github.com/fabioTowers 'Ver perfil no GitHub')*
+
+> *[Gabriely de Jesus Santos Bicigo (SP303061X)](https://github.com/GabrielyBicigo 'Ver perfil no GitHub')*
+> 
